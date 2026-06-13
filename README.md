@@ -75,7 +75,9 @@ Le raisonnement complet est dans [`docs/08`](docs/08-pourquoi-pas-rootkit.md).
 
 ## Licence
 
-[Apache 2.0](LICENSE) — Copyright 2026 Mathieu Bellot. *(Attribution définitive à confirmer par l'auteur.)*
+[Apache 2.0](LICENSE) — Copyright 2026 Mathieu Bellot.
+
+L'attribution est faite au **nom personnel de l'auteur**, et non à une entité commerciale : ce dépôt est un travail pédagogique individuel, et cette attribution évite de rattacher une société à un contenu traitant de techniques de contournement (cf. [`docs/08`](docs/08-pourquoi-pas-rootkit.md), motif légitime).
 
 ## Avertissement
 
