@@ -63,6 +63,15 @@ Le détail est dans [`docs/00-threat-model.md`](docs/00-threat-model.md), et la 
 
 Annexes : [`scripts/`](scripts/) (utilitaires non destructifs), [`examples/`](examples/) (gabarit de modèle de menace, arbre de décision).
 
+## Démo interactive (hors-ligne)
+
+Le dossier [`demo/`](demo/) contient une démonstration web **100 % hors-ligne** — ouvre [`demo/index.html`](demo/index.html) d'un double-clic. Elle te montre, sur ton propre appareil :
+
+- ton **empreinte de navigateur** (*fingerprint*) en direct, et pourquoi la combinaison de signaux anodins te rend reconnaissable ;
+- un **lecteur + nettoyeur de métadonnées EXIF/GPS** : glisse une photo, vois ce qu'elle révèle (dont les coordonnées GPS), télécharge une copie nettoyée.
+
+Aucune donnée n'est envoyée nulle part : la page ne fait aucune requête réseau. Détails dans [`demo/README.md`](demo/README.md).
+
 ## Pourquoi ce dépôt relève du « motif légitime »
 
 L'article 323-3-1 du Code pénal réprime la mise à disposition, **sans motif légitime**, d'un moyen conçu pour commettre une atteinte à un système de traitement automatisé de données. Ce dépôt reste explicitement du côté légitime :

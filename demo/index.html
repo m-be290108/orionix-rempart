@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orionix Rempart — Ce que ton appareil révèle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="wrap">
+    <h1>Orionix&nbsp;Rempart <span class="spark">⚡</span></h1>
+    <p class="sub">Ce que ton appareil révèle — démonstration <strong>100&nbsp;% hors-ligne</strong>.</p>
+    <p class="privacy" role="note">
+      🔒 <strong>Tout se passe dans ton navigateur.</strong> Aucune donnée n'est envoyée nulle part —
+      cette page ne fait aucune requête réseau. Tu peux le vérifier : ouvre les outils de
+      développement → onglet « Réseau », recharge, et constate qu'il ne se passe rien.
+    </p>
+  </header>
+
+  <main class="wrap">
+    <!-- ========== EMPREINTE ========== -->
+    <section class="card">
+      <h2>1 · Ton empreinte de navigateur</h2>
+      <p>
+        Pris isolément, chaque signal ci-dessous paraît anodin. C'est leur <strong>combinaison</strong>
+        qui te rend reconnaissable d'un site à l'autre, même sans cookie. C'est le
+        <em>fingerprinting</em>. Rien ici n'est envoyé : tout est calculé localement.
+      </p>
+      <table class="kv">
+        <thead><tr><th>Signal</th><th>Valeur sur cet appareil</th><th>Remarque / parade</th></tr></thead>
+        <tbody id="fp-body"></tbody>
+      </table>
+      <p class="combined">
+        Empreinte combinée (hash local de tous les signaux) :
+        <code id="fp-combined">…</code>
+        <span class="hint">— si ce hash est stable entre deux visites, un site peut te re-reconnaître.</span>
+      </p>
+      <details>
+        <summary>Comment réduire cette empreinte ?</summary>
+        <ul>
+          <li>Le <strong>fingerprinting de navigateur</strong> se combat surtout côté navigateur :
+            un navigateur durci qui uniformise ces signaux (le navigateur du projet Tor) —
+            voir <a href="../docs/03-resistance-correlation.md">docs/03</a>.</li>
+          <li>Côté système, les <strong>identifiants matériels</strong> (MAC, identifiant publicitaire)
+            se règlent nativement — voir <a href="../docs/04-identifiants-materiels.md">docs/04</a>.</li>
+          <li>Ton <strong>adresse IP</strong> (non affichée ici, car la récupérer demanderait une requête
+            réseau) est masquée par un tunnel — voir <a href="../docs/03-resistance-correlation.md">docs/03</a>.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ========== EXIF ========== -->
+    <section class="card">
+      <h2>2 · Métadonnées cachées de tes photos (EXIF / GPS)</h2>
+      <p>
+        Une photo prise au téléphone contient souvent des <strong>métadonnées EXIF</strong> :
+        date exacte, modèle de l'appareil, et parfois les <strong>coordonnées GPS</strong> du lieu
+        de prise de vue. Glisse une photo (JPEG) ci-dessous : tout est lu <strong>localement</strong>,
+        rien n'est téléversé.
+      </p>
+      <div id="drop" class="drop" tabindex="0">
+        <input type="file" id="file" accept="image/jpeg,image/jpg" hidden>
+        <p><strong>Glisse une photo ici</strong> ou <button type="button" id="pick" class="link">choisis un fichier</button>.</p>
+        <p class="hint">Astuce : une photo prise avec la géolocalisation activée révèle le mieux le problème.</p>
+      </div>
+      <div id="exif-result" hidden>
+        <table class="kv" id="exif-table"><tbody id="exif-body"></tbody></table>
+        <div id="exif-actions"></div>
+        <p class="hint">
+          Le nettoyage ré-encode l'image via un canvas, ce qui <strong>supprime toutes les métadonnées</strong>
+          (au prix d'une légère recompression). Voir le scénario photo : <a href="../docs/06-scenarios-pratiques.md">docs/06</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="card ethics">
+      <h2>Où passe la frontière éthique</h2>
+      <p>
+        Cette démo n'inspecte que <strong>ton propre</strong> appareil, à ta demande, et ne cache rien.
+        C'est exactement la ligne du projet : on outille le <strong>propriétaire</strong> pour qu'il
+        comprenne et réduise son empreinte — jamais pour surveiller autrui.
+        Voir <a href="../docs/08-pourquoi-pas-rootkit.md">docs/08</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Orionix Rempart — démo pédagogique hors-ligne. Aucune garantie ; voir
+      <a href="../docs/07-ce-que-ce-stack-ne-fait-pas.md">ce que ce stack ne fait pas</a>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
