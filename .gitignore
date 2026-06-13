@@ -1,0 +1,12 @@
+# Fichiers générés par les scripts du dépôt (ne pas versionner)
+netguard-bootstrap-rules.txt
+
+# Artefacts système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+*.swp
+*~
+.idea/
+.vscode/
