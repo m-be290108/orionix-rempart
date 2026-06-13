@@ -1,6 +1,6 @@
-# mobile-sovereignty-stack
+# Orionix Rempart
 
-> Guide d'ingénierie honnête pour **réduire** le pistage et le profilage sur Android, sans jamais construire de rootkit ni de logiciel espion.
+> **Souveraineté numérique Android.** Guide d'ingénierie honnête pour **réduire** le pistage et le profilage sur Android, sans jamais construire de rootkit ni de logiciel espion.
 
 ---
 
