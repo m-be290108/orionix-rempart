@@ -45,4 +45,4 @@ Si Tor est filtré sur ton réseau, utilise un **pont** (*bridge*) : un point d'
 
 ## Rappel honnête
 
-Aucune de ces briques ne te rend anonyme face à un adversaire qui peut **te localiser par le réseau cellulaire**, **corréler entrée et sortie**, ou **exploiter ton appareil**. Relis [07](07-ce-que-ce-stack-ne-fait-pas.md). Le mot « intraçable » n'apparaît nulle part dans ce dépôt parce qu'il serait faux.
+Aucune de ces briques ne te rend anonyme face à un adversaire qui peut **te localiser par le réseau cellulaire**, **corréler entrée et sortie**, ou **exploiter ton appareil**. Relis [07](07-ce-que-ce-stack-ne-fait-pas.md). Le mot « intraçable » n'est jamais une promesse dans ce dépôt — quand il y figure, c'est pour le réfuter, parce qu'il serait faux.
