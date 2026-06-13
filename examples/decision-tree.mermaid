@@ -1,0 +1,38 @@
+%% Arbre de décision — "Par où commencer ?"
+%% Rends ceci visible sur https://mermaid.live ou tout rendu Mermaid.
+%% Chaque feuille renvoie au document concerné (docs/NN). Lis docs/00 d'abord.
+
+flowchart TD
+    START([Quel est ton adversaire principal ?]) --> BASE
+
+    BASE[Base commune à tous les cas] --> B00[docs/00 : pose ton modèle de menace]
+    B00 --> B01[docs/01 : Pixel + GrapheneOS, re-verrouillé, SANS root]
+
+    START --> ADPUB{Profilage commercial /\nrégies publicitaires ?}
+    ADPUB -- oui --> P1[docs/04 : supprimer l'ID publicitaire,\nMAC aléatoire non persistante]
+    ADPUB -- oui --> P2[docs/02 : RethinkDNS,\nDNS filtrant + pare-feu par app]
+
+    START --> ADFAI{Pistage par le FAI /\ncontenu des sites ?}
+    ADFAI -- oui --> F1[docs/02 : DNS chiffré]
+    ADFAI -- oui --> F2[docs/03 : Mullvad via WireGuard\ndans RethinkDNS]
+
+    START --> ADWIFI{Wi-Fi public hostile ?}
+    ADWIFI -- oui --> W1[docs/04 : MAC aléatoire non persistante]
+    ADWIFI -- oui --> W2[docs/03 : tunnel chiffré Mullvad]
+
+    START --> ADAPP{Applications abusives /\ntrop curieuses ?}
+    ADAPP -- oui --> A1[docs/01 : bac à sable + profils]
+    ADAPP -- oui --> A2[docs/02 : pare-feu par app]
+
+    START --> ADSITE{Cacher mon IP à un site\nprécis et sensible ?}
+    ADSITE -- oui --> S1[docs/03 : Tor via Orbot]
+    ADSITE -- oui --> S2[Tor bloqué ? -> examples/tor-bridge-setup.md]
+
+    %% Question récurrente sur le root
+    START --> ROOT{Ai-je besoin du root ?}
+    ROOT -- "presque toujours NON" --> RNO[Reste re-verrouillé sans root\ndocs/01]
+    ROOT -- "cas limité : app de MON appareil\nqui refuse le root" --> RYES[docs/05 : lire docs/07 ET docs/08 d'abord\n+ risques et limites]
+
+    %% Garde-fou final
+    START --> LIMITS[/Toujours calibrer :\ndocs/07 ce que le stack ne fait PAS/]
+    LIMITS --> NOANON[Aucune promesse d'anonymat /\nintraçabilité]
