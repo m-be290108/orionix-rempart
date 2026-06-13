@@ -69,4 +69,4 @@ Le re-verrouillage du bootloader avec *verified boot* (ce document) et l'**obten
 
 ## Et sur iOS ?
 
-Hors périmètre. iOS a un modèle de sécurité différent (pas de ROM alternative, bac à sable imposé, pas d'équivalent à GrapheneOS). Le « Mode Isolement » (*Lockdown Mode*) d'Apple répond à une autre logique. Ce dépôt traite Android.
+Hors périmètre. iOS a un modèle de sécurité différent (pas de ROM alternative, bac à sable imposé, pas d'équivalent à GrapheneOS). Le « Mode Isolement » (*Lockdown Mode*) d'Apple répond à une autre logique. Ce dépôt traite Android — le détail des raisons et des mesures réalistes côté iOS est dans la note dédiée : [09 — Note sur iOS](09-note-ios.md).

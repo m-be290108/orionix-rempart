@@ -59,6 +59,7 @@ Le détail est dans [`docs/00-threat-model.md`](docs/00-threat-model.md), et la 
 | 06 | [Scénarios pratiques](docs/06-scenarios-pratiques.md) | Tous |
 | 07 | [Ce que ce stack ne fait PAS](docs/07-ce-que-ce-stack-ne-fait-pas.md) | **Tous — important** |
 | 08 | [Pourquoi pas un rootkit (éthique + droit)](docs/08-pourquoi-pas-rootkit.md) | Tous |
+| 09 | [Note sur iOS : pourquoi il est hors périmètre](docs/09-note-ios.md) | Tous |
 
 Annexes : [`scripts/`](scripts/) (utilitaires non destructifs), [`examples/`](examples/) (gabarit de modèle de menace, arbre de décision).
 
